@@ -8,6 +8,7 @@ import 'package:helpdeskmains/components/my_button.dart';
 import 'package:helpdeskmains/components/my_textfield.dart';
 import 'package:helpdeskmains/pages/admin_panel.dart';
 import 'package:helpdeskmains/pages/adminregisterpage.dart';
+import 'package:helpdeskmains/pages/forgotpassword.dart';
 import 'package:helpdeskmains/pages/homepage.dart';
 import 'package:helpdeskmains/pages/register_page.dart';
 
@@ -219,20 +220,29 @@ class _LoginPageState extends State<LoginPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Forgot your login details? ',
+                        'Forget your password? ',
                         style: TextStyle(color: Colors.grey.shade600, fontSize: 12),
                       ),
-                      Text(
-                        'Get help logging in.',
-                        style: TextStyle(
-                          color: Colors.blue.shade900,
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => ForgotPasswordPage()),
+                          );
+                        },
+                        child: Text(
+                          'Forget Password.',
+                          style: TextStyle(
+                            color: Colors.blue.shade900,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ],
                   ),
                 ),
+
                 const SizedBox(height: 10),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25),

@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-
+ 
 class AdminApprovalScreen extends StatefulWidget {
   @override
   _AdminApprovalScreenState createState() => _AdminApprovalScreenState();
@@ -12,11 +12,10 @@ class _AdminApprovalScreenState extends State<AdminApprovalScreen> {
   bool _isLoading = true;
 
   String _selectedLocation = '';
-
   Future<void> _approveAdmin(String adminId) async {
     await _firestore.collection('admins').doc(adminId).update({'approved': true});
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Admin approved successfully!')),
+      const SnackBar( content: Text('Admin approved successfully!')),
     );
   }
 
@@ -80,7 +79,6 @@ class _AdminApprovalScreenState extends State<AdminApprovalScreen> {
                       'assigned_to_admin': adminId,
                     });
                   }
-
                   Navigator.pop(context);
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(content: Text('Location and submissions assigned to admin!')),
