@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:helpdeskmains/pages/auth_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:helpdeskmains/pages/homepage.dart';
+import 'package:helpdeskmains/pages/onboarding_screen.dart';
 import 'package:provider/provider.dart';
 import 'firebase_options.dart';
 
@@ -28,13 +29,13 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  @override
+  @override 
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
 
     return MaterialApp(
       theme: themeProvider.isDark ? ThemeData.dark() : ThemeData.light(),
-      home: const AuthPage(),
+      home: OnboardingPage(),
       debugShowCheckedModeBanner: false,
     );
   }
